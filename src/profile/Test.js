@@ -16,8 +16,6 @@ import {
   MDBContainer,
   MDBIcon,
 } from 'mdb-react-ui-kit';
-
-import h  from "./img/1.jpeg";
 import f  from "./img/First.jpg";
 import s  from "./img/Second.jfif";
 import t  from "./img/tt.jpg";
@@ -66,20 +64,17 @@ const Test = props =>{
         </MDBContainer>
       </MDBNavbar>
 
-      <div
-        className='p-5 text-center bg-image'
-        style={{ backgroundImage:  `url(${h})`, height: 700 }}
-      >
-        <div className='mask' style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)' }}>
+      <div > 
+      {props.children}
+        <div className='mask' style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
           <div className='d-flex justify-content-end align-items-center h-100'>
-          
-            <div className='text-white'>
+          <div className='text-white'>
 
             <h1 className='mb-3'>{props.name}</h1>
 
     <h4 className='mb-3' style={{ width: '830px' , textAlign:'right', padding:'10px'}}
-    >ولدت في ولاية قبلي في تونس، وعرفت منذ مشاركتها
-               في فيلمين سينمائيين هما موسم الرجال 
+   > {props.bio}
+    وهما موسم الرجال 
               وصمت القصور للمخرجة مفيدة التلاتلي. 
               ولفتت نظر المخرجة إيناس الدغيدي
                فدعتها إلى القاهرة وأسندت إليها 
@@ -88,10 +83,7 @@ const Test = props =>{
                ومن ثم لمع إسمها بتعدد مشاركاتها 
               حتى أصبحت واحدة من أهم النجمات في السينما المصرية.
 <hr></hr>
- نالت عام 2004 جائزة أحسن ممثلة
- من المركز الكاثوليكي المصري، عن دورها في فيلم أحلى الأوقات.
- شاركت في نوفمبر 2007 في مهرجان دمشق السينمائي الدولي 
-كعضوة في لجنة التحكيم لمسابقة الأفلام الطويلة.
+{props.profession}
 <hr></hr>
 الممثلة «هند صبري» حاصلة على درجة ماجستير في حقوق الملكية الفكرية،
  وهي مرسمة منذ فيفري/شباط 2007 في جدول المحاماة بتونس. 
@@ -99,7 +91,7 @@ const Test = props =>{
 مهرجان البندقية السينمائي العالمي في دورته الـ 76، 
 وهي أول سيدة عربية تنضم للجنة.
    </h4>
-   {props.children}
+  
             </div>
           </div>
         </div>
@@ -113,9 +105,10 @@ const Test = props =>{
 {/* CARD */}
 <CardGroup>          
   <Card>
-    <Card.Img variant="top" src={f} height={520}
+  
+     <Card.Img variant="top" src={f} height={520}
      style={{ borderWidth: 3 ,justifyContent: 'center',borderRadius: 50 ,margin: 10, alignItems: 'center',width: 450}} />
-   
+
     <Card.Body>
       <Card.Title>الفيل الازرق 2</Card.Title>
       <Card.Text>
